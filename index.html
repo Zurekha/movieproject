@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MovieMania Hub</title>
+  <link rel="stylesheet" href="movie.css" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header id="movieheader" class="fade-in">
+    <div class="header-inner">
+      <h1>MovieMania Hub</h1>
+      <p>Your Gateway to the Best Films</p>
+    </div>
+  </header>
+
+  <nav id="menu" aria-label="Main navigation">
+    <a href="#">Home</a>
+    <a href="#row1">Now Showing</a>
+    <a href="#coming-soon">Coming Soon</a>
+    <a href="#contact-info">Contact Us</a>
+  </nav>
+
+  <main>
+    <!-- Animated hero with subtle overlay -->
+    <section id="hero">
+      <div id="bannerimage" role="img" aria-label="Banner image of films"></div>
+
+      <!-- small hero controls: autoplay/pause audio -->
+      <div class="hero-controls">
+        <!-- Replace "audio.mp3" with your audio file. If you don't have one, just remove the <audio> element. -->
+        <audio id="background-music" autoplay loop controls>
+          <!-- <source src="audio.mp3" type="audio/mpeg"> -->
+           <source src="cinematic-impact.mp3" type="audio/mpeg">
+          Your browser does not support audio element.
+        </audio>
+
+        <button id="audio-toggle" aria-pressed="false">Play Music</button>
+      </div>
+    </section>
+
+    <!-- Slideshow / Featured row -->
+    <section id="row1" class="card-row">
+      <figure class="card">
+        <img src="./first11.jpg" alt="Poster - The Greatest Adventure" />
+        <figcaption>
+          <h2>The Greatest Adventure</h2>
+          <p class="meta">Action • 2h 15m</p>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="./love.jpg" alt="Poster - Love Unfolded" />
+        <figcaption>
+          <h2>Love Unfolded</h2>
+          <p class="meta">Romance • 1h 45m</p>
+        </figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="./murder.jpg" alt="Poster - Mystery Nights" />
+        <figcaption>
+          <h2>Mystery Nights</h2>
+          <p class="meta">Thriller • 2h 0m</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- CSS-only slideshow (small) -->
+    <section id="slideshow" aria-label="Promotional slideshow">
+      <div class="slideshow-container">
+        <div class="slide active">
+          <img src="./first11.jpg" alt="Slide 1 poster" />
+          <div class="slide-caption">Featured: The Greatest Adventure — Now Showing</div>
+        </div>
+        <div class="slide">
+          <img src="./love.jpg" alt="Slide 2 poster" />
+          <div class="slide-caption">Romance Special — Dates & Times</div>
+        </div>
+        <div class="slide">
+          <img src="./murder.jpg" alt="Slide 3 poster" />
+          <div class="slide-caption">Mystery Nights — Book Now</div>
+        </div>
+        <button class="slide-btn prev" aria-label="Previous slide">&lsaquo;</button>
+        <button class="slide-btn next" aria-label="Next slide">&rsaquo;</button>
+      </div>
+    </section>
+
+    <h2 id="Schedule">Movie Schedule</h2>
+
+    <section class="schedule-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Movie</th>
+            <th>Show Time</th>
+            <th>Screen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Unchartered</td>
+            <td>2:00 PM</td>
+            <td>Screen 1</td>
+          </tr>
+          <tr>
+            <td>Redeeming Love</td>
+            <td>4:30 PM</td>
+            <td>Screen 2</td>
+          </tr>
+          <tr>
+            <td>Mystery Nights</td>
+            <td>7:00 PM</td>
+            <td>Screen 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Simple embedded promo video (replace src with your file) -->
+    <section id="coming-soon" class="media-section">
+      <h2>Promo</h2>
+      <!-- Replace "promo.mp4" with your local video file. Keep controls so instructor can test. -->
+      <video id="promo-video" controls preload="metadata" width="100%" style="max-width:800px">
+        <!-- <source src="promo.mp4" type="video/mp4"> -->
+         <source src="promo.mp4" type="video/mp4">
+        <!-- Replace above commented source with your video file name -->
+        Your browser does not support video.
+      </video>
+    </section>
+
+    <!-- Form -->
+    <div id="form">
+      <h2>Submit your favourite movie</h2>
+      <form id="favForm" action="#" novalidate>
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Movie Details</legend>
+
+          <label for="movieTitle">Movie Title:</label>
+          <input type="text" name="movieTitle" id="movieTitle" placeholder="Enter the movie title" required />
+
+          <label for="genre">Genre:</label>
+          <select id="genre" name="genre" required>
+            <option value="" disabled selected>Select Genre</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Special Requests</legend>
+          <label for="textArea">Comments:</label>
+          <textarea name="textArea" id="textArea" rows="4"></textarea>
+        </fieldset>
+
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div id="contact-info">
+        <h3>Contact Us</h3>
+        <p><strong>Address:</strong> Movie City, Nairobi, Kenya</p>
+        <p><strong>Email:</strong> <a href="mailto:info@moviemania.ke">info@moviemania.ke</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+254792345975">+254 792 345975</a></p>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; MovieMania. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small script for slideshow & UI interactions -->
+  <script>
+    // Slideshow logic
+    (function () {
+      const slides = document.querySelectorAll('.slideshow-container .slide');
+      const prevBtn = document.querySelector('.slide-btn.prev');
+      const nextBtn = document.querySelector('.slide-btn.next');
+      let idx = 0;
+      let slideTimer = null;
+
+      function show(n) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === n));
+      }
+
+      function next() {
+        idx = (idx + 1) % slides.length;
+        show(idx);
+      }
+      function prev() {
+        idx = (idx - 1 + slides.length) % slides.length;
+        show(idx);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        next();
+        resetTimer();
+      });
+      prevBtn.addEventListener('click', () => {
+        prev();
+        resetTimer();
+      });
+
+      function startTimer() {
+        slideTimer = setInterval(next, 5000); // 5s per slide
+      }
+      function resetTimer() {
+        clearInterval(slideTimer);
+        startTimer();
+      }
+      startTimer();
+
+      // Audio toggle
+      const audio = document.getElementById('bg-audio');
+      const audioToggle = document.getElementById('audio-toggle');
+      audioToggle.addEventListener('click', () => {
+        if (!audio) return;
+        if (audio.paused) {
+          audio.play().catch(() => {}); // Autoplay may be blocked, ignore error
+          audioToggle.textContent = 'Pause Music';
+          audioToggle.setAttribute('aria-pressed', 'true');
+        } else {
+          audio.pause();
+          audioToggle.textContent = 'Play Music';
+          audioToggle.setAttribute('aria-pressed', 'false');
+        }
+      });
+
+      // Form submit: simple client-side confirmation (no network request)
+      document.getElementById('favForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // basic validation
+        const name = document.getElementById('name').value.trim();
+        const movie = document.getElementById('movieTitle').value.trim();
+        if (!name || !movie) {
+          alert('Please fill your name and movie title.');
+          return;
+        }
+        alert('Thank you! Your favourite movie has been submitted.');
+        this.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
